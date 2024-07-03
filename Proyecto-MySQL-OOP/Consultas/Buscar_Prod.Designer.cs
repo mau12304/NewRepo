@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Buscar_Prod));
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblNombreTienda = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,6 +60,7 @@
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelLogo.Controls.Add(this.btnMenu);
             this.panelLogo.Controls.Add(this.lblNombreTienda);
             this.panelLogo.Location = new System.Drawing.Point(1, 2);
             this.panelLogo.Name = "panelLogo";
@@ -80,6 +82,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.SeaShell;
+            this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.txttipo);
             this.groupBox1.Controls.Add(this.txtGenero);
             this.groupBox1.Controls.Add(this.txtmodelo);
@@ -102,7 +105,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(525, 423);
+            this.groupBox1.Size = new System.Drawing.Size(525, 377);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Producto";
@@ -136,13 +139,13 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnBuscar.BackColor = System.Drawing.Color.SeaShell;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(377, 16);
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(295, 14);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(109, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(48, 43);
             this.btnBuscar.TabIndex = 24;
-            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -196,7 +199,7 @@
             // txtid
             // 
             this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtid.Location = new System.Drawing.Point(264, 23);
+            this.txtid.Location = new System.Drawing.Point(196, 14);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(84, 24);
             this.txtid.TabIndex = 12;
@@ -285,7 +288,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(229, 25);
+            this.label1.Location = new System.Drawing.Point(153, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(19, 18);
             this.label1.TabIndex = 3;
@@ -293,25 +296,27 @@
             // 
             // btnMenu
             // 
-            this.btnMenu.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnMenu.BackColor = System.Drawing.SystemColors.Window;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.Location = new System.Drawing.Point(10, 457);
+            this.btnMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.Location = new System.Drawing.Point(491, 0);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(109, 36);
+            this.btnMenu.Size = new System.Drawing.Size(31, 29);
             this.btnMenu.TabIndex = 25;
-            this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLimpiar.BackColor = System.Drawing.Color.SeaShell;
+            this.btnLimpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.BackgroundImage")));
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(129, 457);
+            this.btnLimpiar.Location = new System.Drawing.Point(349, 16);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(109, 36);
+            this.btnLimpiar.Size = new System.Drawing.Size(60, 43);
             this.btnLimpiar.TabIndex = 26;
-            this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
@@ -319,9 +324,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 505);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnMenu);
+            this.ClientSize = new System.Drawing.Size(524, 455);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panelLogo);
             this.Name = "Buscar_Prod";

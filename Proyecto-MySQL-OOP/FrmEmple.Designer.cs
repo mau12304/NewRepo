@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmple));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.mstFecha = new System.Windows.Forms.MaskedTextBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
@@ -76,7 +77,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 78);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(505, 359);
+            this.groupBox3.Size = new System.Drawing.Size(505, 349);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos del Empleado";
@@ -138,37 +139,39 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEliminar.BackColor = System.Drawing.Color.SeaShell;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(325, 289);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(201, 249);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(156, 48);
+            this.btnEliminar.Size = new System.Drawing.Size(74, 100);
             this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnInsertar
             // 
-            this.btnInsertar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnInsertar.BackColor = System.Drawing.Color.SeaShell;
+            this.btnInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsertar.BackgroundImage")));
+            this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.Location = new System.Drawing.Point(162, 289);
+            this.btnInsertar.Location = new System.Drawing.Point(117, 267);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(156, 48);
+            this.btnInsertar.Size = new System.Drawing.Size(58, 76);
             this.btnInsertar.TabIndex = 9;
-            this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnModificar.BackColor = System.Drawing.Color.SeaShell;
+            this.btnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.BackgroundImage")));
+            this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(0, 289);
+            this.btnModificar.Location = new System.Drawing.Point(12, 267);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(156, 48);
+            this.btnModificar.Size = new System.Drawing.Size(74, 76);
             this.btnModificar.TabIndex = 8;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 

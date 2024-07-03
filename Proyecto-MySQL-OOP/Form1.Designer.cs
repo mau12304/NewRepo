@@ -239,9 +239,11 @@
             // 
             this.btnBusca.BackColor = System.Drawing.Color.Gainsboro;
             this.btnBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusca.Location = new System.Drawing.Point(56, 410);
+            this.btnBusca.Image = ((System.Drawing.Image)(resources.GetObject("btnBusca.Image")));
+            this.btnBusca.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusca.Location = new System.Drawing.Point(67, 394);
             this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(261, 36);
+            this.btnBusca.Size = new System.Drawing.Size(232, 41);
             this.btnBusca.TabIndex = 25;
             this.btnBusca.Text = "Buscar Productos";
             this.btnBusca.UseVisualStyleBackColor = false;
@@ -271,7 +273,7 @@
             this.modelosToolStripMenuItem,
             this.generosToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(137, 26);
             this.opcionesToolStripMenuItem.Text = "&Datos reservados";
             // 
             // areasToolStripMenuItem
@@ -313,8 +315,8 @@
             // 
             this.metodoGrafoToolStripMenuItem.BackColor = System.Drawing.Color.GhostWhite;
             this.metodoGrafoToolStripMenuItem.Name = "metodoGrafoToolStripMenuItem";
-            this.metodoGrafoToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
-            this.metodoGrafoToolStripMenuItem.Text = "Metodo Grafo ";
+            this.metodoGrafoToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
+            this.metodoGrafoToolStripMenuItem.Text = "Metodo Grafo";
             this.metodoGrafoToolStripMenuItem.Click += new System.EventHandler(this.metodoGrafoToolStripMenuItem_Click);
             // 
             // Frm1

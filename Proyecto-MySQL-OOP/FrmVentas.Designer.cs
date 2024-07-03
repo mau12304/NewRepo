@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVentas));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btndetalle_venta = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.mskFechaVenta = new System.Windows.Forms.MaskedTextBox();
@@ -51,7 +53,6 @@
             this.dgtVentas = new System.Windows.Forms.DataGridView();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblNombreTienda = new System.Windows.Forms.Label();
-            this.btndetalle_venta = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtVentas)).BeginInit();
             this.panelLogo.SuspendLayout();
@@ -60,7 +61,6 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.SeaShell;
-            this.groupBox4.Controls.Add(this.btndetalle_venta);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.cmbProducto);
             this.groupBox4.Controls.Add(this.mskFechaVenta);
@@ -85,6 +85,18 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos de ventas";
+            // 
+            // btndetalle_venta
+            // 
+            this.btndetalle_venta.BackColor = System.Drawing.Color.Gainsboro;
+            this.btndetalle_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndetalle_venta.Location = new System.Drawing.Point(857, 397);
+            this.btndetalle_venta.Name = "btndetalle_venta";
+            this.btndetalle_venta.Size = new System.Drawing.Size(212, 36);
+            this.btndetalle_venta.TabIndex = 27;
+            this.btndetalle_venta.Text = "Detalle de Ventas";
+            this.btndetalle_venta.UseVisualStyleBackColor = false;
+            this.btndetalle_venta.Click += new System.EventHandler(this.btndetalle_venta_Click);
             // 
             // label5
             // 
@@ -171,37 +183,37 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEliminar.BackColor = System.Drawing.Color.SeaShell;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(324, 301);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(250, 261);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(156, 48);
+            this.btnEliminar.Size = new System.Drawing.Size(84, 88);
             this.btnEliminar.TabIndex = 11;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnInsertar
             // 
-            this.btnInsertar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnInsertar.BackColor = System.Drawing.Color.SeaShell;
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.Location = new System.Drawing.Point(162, 301);
+            this.btnInsertar.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertar.Image")));
+            this.btnInsertar.Location = new System.Drawing.Point(141, 288);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(156, 48);
+            this.btnInsertar.Size = new System.Drawing.Size(76, 61);
             this.btnInsertar.TabIndex = 10;
-            this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnModificar.BackColor = System.Drawing.Color.SeaShell;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(0, 301);
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.Location = new System.Drawing.Point(45, 288);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(156, 48);
+            this.btnModificar.Size = new System.Drawing.Size(72, 61);
             this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -313,24 +325,13 @@
             this.lblNombreTienda.TabIndex = 0;
             this.lblNombreTienda.Text = "FACTORY STORE";
             // 
-            // btndetalle_venta
-            // 
-            this.btndetalle_venta.BackColor = System.Drawing.Color.Gainsboro;
-            this.btndetalle_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndetalle_venta.Location = new System.Drawing.Point(132, 254);
-            this.btndetalle_venta.Name = "btndetalle_venta";
-            this.btndetalle_venta.Size = new System.Drawing.Size(212, 36);
-            this.btndetalle_venta.TabIndex = 27;
-            this.btndetalle_venta.Text = "Detalle de Ventas";
-            this.btndetalle_venta.UseVisualStyleBackColor = false;
-            this.btndetalle_venta.Click += new System.EventHandler(this.btndetalle_venta_Click);
-            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1166, 441);
+            this.Controls.Add(this.btndetalle_venta);
             this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.dgtVentas);
             this.Controls.Add(this.btnSalirVentas);

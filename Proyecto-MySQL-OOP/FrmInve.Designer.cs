@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInve));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.mskFec_reorden = new System.Windows.Forms.MaskedTextBox();
             this.cmbidproducto = new System.Windows.Forms.ComboBox();
@@ -119,7 +120,7 @@
             this.txtComentarios.Name = "txtComentarios";
             this.txtComentarios.Size = new System.Drawing.Size(395, 48);
             this.txtComentarios.TabIndex = 13;
-
+            // 
             // txtCanMin
             // 
             this.txtCanMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,37 +150,37 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEliminar.BackColor = System.Drawing.Color.SeaShell;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(330, 337);
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(284, 302);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(156, 48);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 90);
             this.btnEliminar.TabIndex = 9;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btninsertar
             // 
-            this.btninsertar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btninsertar.BackColor = System.Drawing.Color.SeaShell;
             this.btninsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninsertar.Location = new System.Drawing.Point(168, 338);
+            this.btninsertar.Image = ((System.Drawing.Image)(resources.GetObject("btninsertar.Image")));
+            this.btninsertar.Location = new System.Drawing.Point(178, 324);
             this.btninsertar.Name = "btninsertar";
-            this.btninsertar.Size = new System.Drawing.Size(156, 48);
+            this.btninsertar.Size = new System.Drawing.Size(75, 68);
             this.btninsertar.TabIndex = 8;
-            this.btninsertar.Text = "Insertar";
             this.btninsertar.UseVisualStyleBackColor = false;
             this.btninsertar.Click += new System.EventHandler(this.btninsertar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnModificar.BackColor = System.Drawing.Color.SeaShell;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(6, 337);
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.Location = new System.Drawing.Point(67, 324);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(156, 48);
+            this.btnModificar.Size = new System.Drawing.Size(73, 68);
             this.btnModificar.TabIndex = 7;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 

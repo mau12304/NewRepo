@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detalle_V));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtprecio = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblNombreTienda = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -67,34 +67,23 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(2, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 260);
+            this.groupBox1.Size = new System.Drawing.Size(415, 260);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle de ventas";
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLimpiar.BackColor = System.Drawing.Color.SeaShell;
+            this.btnLimpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.BackgroundImage")));
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(294, 29);
+            this.btnLimpiar.Location = new System.Drawing.Point(355, 18);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(96, 29);
+            this.btnLimpiar.Size = new System.Drawing.Size(54, 45);
             this.btnLimpiar.TabIndex = 27;
-            this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenu.BackgroundImage")));
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.Location = new System.Drawing.Point(371, 3);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(28, 24);
-            this.btnMenu.TabIndex = 26;
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // txtTotal
             // 
@@ -107,13 +96,13 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnBuscar.BackColor = System.Drawing.Color.SeaShell;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(203, 28);
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(301, 15);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(85, 31);
+            this.btnBuscar.Size = new System.Drawing.Size(47, 50);
             this.btnBuscar.TabIndex = 24;
-            this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -147,7 +136,7 @@
             // txtid
             // 
             this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtid.Location = new System.Drawing.Point(113, 35);
+            this.txtid.Location = new System.Drawing.Point(211, 15);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(84, 24);
             this.txtid.TabIndex = 12;
@@ -196,11 +185,24 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 28);
+            this.label1.Location = new System.Drawing.Point(146, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Id_venta";
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMenu.BackgroundImage")));
+            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Location = new System.Drawing.Point(380, 3);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(28, 24);
+            this.btnMenu.TabIndex = 26;
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // panelLogo
             // 
@@ -209,7 +211,7 @@
             this.panelLogo.Controls.Add(this.btnMenu);
             this.panelLogo.Location = new System.Drawing.Point(2, 1);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(408, 71);
+            this.panelLogo.Size = new System.Drawing.Size(415, 71);
             this.panelLogo.TabIndex = 17;
             // 
             // lblNombreTienda
@@ -218,7 +220,7 @@
             this.lblNombreTienda.AutoSize = true;
             this.lblNombreTienda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreTienda.ForeColor = System.Drawing.Color.White;
-            this.lblNombreTienda.Location = new System.Drawing.Point(92, 20);
+            this.lblNombreTienda.Location = new System.Drawing.Point(95, 20);
             this.lblNombreTienda.Name = "lblNombreTienda";
             this.lblNombreTienda.Size = new System.Drawing.Size(243, 32);
             this.lblNombreTienda.TabIndex = 0;
@@ -228,7 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 341);
+            this.ClientSize = new System.Drawing.Size(415, 341);
             this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.groupBox1);
             this.Name = "Detalle_V";
@@ -248,7 +250,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtprecio;
         private System.Windows.Forms.TextBox txtcantidad;
         private System.Windows.Forms.TextBox txtid_producto;
@@ -260,5 +261,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label lblNombreTienda;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
