@@ -72,18 +72,21 @@ namespace Proyecto_MySQL_OOP
             }
             objetoInventario.insertarInventario(Convert.ToInt32(cmbidproducto.SelectedValue), txtstock,txtCantMax,txtCanMin,txtComentarios,mskFec_reorden, Convert.ToInt32(cmbid_ubi.SelectedValue));
             objetoInventario.VerInventario(dgtinventario);
+            limpiar();
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ClasesDb.TbInventario objetoInventario = new ClasesDb.TbInventario();
             objetoInventario.modificarInventario(Convert.ToInt32(cmbidproducto.SelectedValue), txtstock, txtCantMax, txtCanMin, txtComentarios, mskFec_reorden, Convert.ToInt32(cmbid_ubi.SelectedValue));
             objetoInventario.VerInventario(dgtinventario);
+            limpiar();
         }
 
         private void dgtinventario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ClasesDb.TbInventario objetoInventario = new ClasesDb.TbInventario();
             objetoInventario.seleccionarInventario(dgtinventario,cmbidproducto, txtstock, txtCantMax, txtCanMin, txtComentarios, mskFec_reorden, cmbid_ubi);
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -91,6 +94,7 @@ namespace Proyecto_MySQL_OOP
             ClasesDb.TbInventario objetoInventario = new ClasesDb.TbInventario();
             objetoInventario.eliminarInventario(cmbidproducto);
             objetoInventario.VerInventario(dgtinventario);
+            limpiar();
         }
 
         private void txtstock_KeyPress(object sender, KeyPressEventArgs e)
@@ -143,21 +147,15 @@ namespace Proyecto_MySQL_OOP
                 e.Handled = true;//El resto de teclas pulsadas se desactivan
             }
         }
-
-        private void txtComentarios_KeyPress(object sender, KeyPressEventArgs e)
+        private void limpiar()
         {
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar)) // Permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true; // El resto de teclas pulsadas se desactivan
-            }
+            cmbidproducto.Text = "";
+            txtCanMin.Clear();
+            txtCantMax.Clear();
+            txtstock.Clear();
+            cmbid_ubi.Text = "";
+            txtComentarios.Clear();
+            mskFec_reorden.Text = "";
         }
     }
 }

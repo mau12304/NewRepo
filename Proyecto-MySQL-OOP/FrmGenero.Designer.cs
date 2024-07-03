@@ -114,7 +114,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(0, 221);
+            this.btnModificar.Location = new System.Drawing.Point(0, 220);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(98, 37);
             this.btnModificar.TabIndex = 21;
@@ -126,7 +126,7 @@
             // 
             this.btnInsertar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.Location = new System.Drawing.Point(104, 220);
+            this.btnInsertar.Location = new System.Drawing.Point(110, 219);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(93, 38);
             this.btnInsertar.TabIndex = 20;

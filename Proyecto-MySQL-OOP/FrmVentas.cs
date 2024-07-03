@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Proyecto_MySQL_OOP.ClasesDb;
+using Proyecto_MySQL_OOP.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,13 @@ namespace Proyecto_MySQL_OOP
             cmbUbicacion.DisplayMember = "Nombre";
             cmbUbicacion.ValueMember = "id_ubicacion";
         }
+        private void llenarProducto()
+        {
+            TbVentas objeto = new TbVentas();
+            cmbProducto.DataSource = objeto.ListarProducto();
+            cmbProducto.DisplayMember = "Nombre";
+            cmbProducto.ValueMember = "id_producto";
+        }
 
         private void btnVolverMenu_Click(object sender, EventArgs e)
         {
@@ -52,12 +60,13 @@ namespace Proyecto_MySQL_OOP
         {
             llenarRepresentante();
             llenarUbicacion();
+            llenarProducto();
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             ClasesDb.TbVentas objetoVentas = new ClasesDb.TbVentas();//INSERTANDO REGISTROS EN ARCHIVO DE TEXTO CON UBICACION DESDE EMU8086
-            string datos = $"id_venta: {txtid.Text}\r\nFecha_venta:{mskFechaVenta.Text}\r\nTotal_Venta:{txtTotalVenta.Text}\r\nRepresentante:{cmbRepresentante.Text}\r\nFecha_reorden:{mskFechaReorden.Text}\r\nUbicacion:{cmbUbicacion.Text}\r\nComentarios:{txtcomentarios.Text}\r\n";
+            string datos = $"id_venta: {txtid.Text}\r\nFecha_venta:{mskFechaVenta.Text}\r\nTotal_Venta:{txtTotalVenta.Text}\r\nRepresentante:{cmbRepresentante.Text}\r\nUbicacion:{cmbUbicacion.Text}\r\nComentarios:{txtcomentarios.Text}\r\n";
             string rutaArchivo = "C:\\emu8086\\vdrive\\C\\Prueba\\Archivo.txt";
 
             using (StreamWriter writer = new StreamWriter(rutaArchivo, true))
@@ -71,15 +80,23 @@ namespace Proyecto_MySQL_OOP
                     File.WriteAllText(rutaArchivo, datos);
                 }
             }
-            objetoVentas.insertarVentas(txtid,mskFechaVenta,txtTotalVenta, Convert.ToInt32(cmbRepresentante.SelectedValue), mskFechaReorden, Convert.ToInt32(cmbUbicacion.SelectedValue), txtcomentarios);
+            objetoVentas.insertarVentas(txtid,mskFechaVenta,txtTotalVenta,
+            Convert.ToInt32(cmbRepresentante.SelectedValue),
+            Convert.ToInt32(cmbUbicacion.SelectedValue),txtcomentarios, Convert.ToInt32(cmbProducto.SelectedValue));
             objetoVentas.VerVentas(dgtVentas);
+            Limpiar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ClasesDb.TbVentas objetoVentas = new ClasesDb.TbVentas();
-            objetoVentas.modificarVentas(txtid, mskFechaVenta, txtTotalVenta, Convert.ToInt32(cmbRepresentante.SelectedValue), mskFechaReorden, Convert.ToInt32(cmbUbicacion.SelectedValue), txtcomentarios);
+            objetoVentas.modificarVentas(txtid,
+             mskFechaVenta, txtTotalVenta,
+             Convert.ToInt32(cmbRepresentante.SelectedValue)
+             , Convert.ToInt32(cmbUbicacion.SelectedValue), 
+             txtcomentarios, Convert.ToInt32(cmbProducto.SelectedValue));
             objetoVentas.VerVentas(dgtVentas);
+            Limpiar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -87,36 +104,13 @@ namespace Proyecto_MySQL_OOP
             ClasesDb.TbVentas objetoVentas = new ClasesDb.TbVentas();
             objetoVentas.eliminarVentas(txtid);
             objetoVentas.VerVentas(dgtVentas);
+            Limpiar();
         }
 
         private void dgtVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ClasesDb.TbVentas objetoVentas = new ClasesDb.TbVentas();
-            objetoVentas.seleccionarVentas(dgtVentas,txtid, mskFechaVenta, txtTotalVenta, cmbRepresentante, mskFechaReorden, cmbUbicacion, txtcomentarios);
-
-        }
-
-        private void btnArea_Click(object sender, EventArgs e)
-        {
-            FrmAreas obj = new FrmAreas();
-            this.Hide();
-            obj.Show();
-        }
-
-        private void txtcomentarios_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar)) // Permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true; // El resto de teclas pulsadas se desactivan
-            }
+            objetoVentas.seleccionarVentas(dgtVentas,txtid, mskFechaVenta, txtTotalVenta, cmbRepresentante, cmbUbicacion, txtcomentarios,cmbProducto);
         }
 
         private void txtTotalVenta_KeyPress(object sender, KeyPressEventArgs e)
@@ -151,6 +145,23 @@ namespace Proyecto_MySQL_OOP
             {
                 e.Handled = true;//El resto de teclas pulsadas se desactivan
             }
+        }
+        
+        private void Limpiar()
+        {
+            txtid.Clear();
+            txtcomentarios.Clear();
+            cmbRepresentante.Text = "";
+            cmbUbicacion.Text = "";
+            mskFechaVenta.Text = "";
+            txtTotalVenta.Clear();
+        }
+
+        private void btndetalle_venta_Click(object sender, EventArgs e)
+        {
+            Detalle_V obj = new Detalle_V();
+            this.Hide();
+            obj.Show();
         }
     }
 }

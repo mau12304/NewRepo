@@ -50,7 +50,6 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblNombreTienda = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.btnPuesto = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgbEmpleado)).BeginInit();
             this.panelLogo.SuspendLayout();
@@ -276,7 +275,7 @@
             this.panelLogo.Controls.Add(this.lblNombreTienda);
             this.panelLogo.Location = new System.Drawing.Point(3, 1);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(1159, 71);
+            this.panelLogo.Size = new System.Drawing.Size(1147, 71);
             this.panelLogo.TabIndex = 11;
             // 
             // lblNombreTienda
@@ -285,7 +284,7 @@
             this.lblNombreTienda.AutoSize = true;
             this.lblNombreTienda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreTienda.ForeColor = System.Drawing.Color.White;
-            this.lblNombreTienda.Location = new System.Drawing.Point(467, 20);
+            this.lblNombreTienda.Location = new System.Drawing.Point(461, 20);
             this.lblNombreTienda.Name = "lblNombreTienda";
             this.lblNombreTienda.Size = new System.Drawing.Size(243, 32);
             this.lblNombreTienda.TabIndex = 0;
@@ -298,24 +297,11 @@
             this.mySqlCommand1.EnableCaching = false;
             this.mySqlCommand1.Transaction = null;
             // 
-            // btnPuesto
-            // 
-            this.btnPuesto.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPuesto.Location = new System.Drawing.Point(993, 389);
-            this.btnPuesto.Name = "btnPuesto";
-            this.btnPuesto.Size = new System.Drawing.Size(156, 48);
-            this.btnPuesto.TabIndex = 12;
-            this.btnPuesto.Text = "Puesto";
-            this.btnPuesto.UseVisualStyleBackColor = false;
-            this.btnPuesto.Click += new System.EventHandler(this.btnPuesto_Click);
-            // 
             // FrmEmple
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 442);
-            this.Controls.Add(this.btnPuesto);
+            this.ClientSize = new System.Drawing.Size(1155, 439);
             this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.dgbEmpleado);
             this.Controls.Add(this.btnVolverMenu);
@@ -358,6 +344,5 @@
         private System.Windows.Forms.Label lblNombreTienda;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.MaskedTextBox mstFecha;
-        private System.Windows.Forms.Button btnPuesto;
     }
 }

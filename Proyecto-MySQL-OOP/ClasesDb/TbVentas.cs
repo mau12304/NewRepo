@@ -39,6 +39,18 @@ namespace Proyecto_MySQL_OOP.ClasesDb
             conexion.cerrarconexion();
             return tabla;
         }
+        public DataTable ListarProducto()
+        {
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion.EstablecerConexion();
+            comando.CommandText = "ListarProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            LeerFilas = comando.ExecuteReader();
+            tabla.Load(LeerFilas);
+            LeerFilas.Close();
+            conexion.cerrarconexion();
+            return tabla;
+        }
 
         public void VerVentas(DataGridView TablaVentas)
         {
@@ -58,14 +70,15 @@ namespace Proyecto_MySQL_OOP.ClasesDb
                 MessageBox.Show("No se cargaron los datos de venta" + ex.ToString());
             }
         }
-        public void insertarVentas(TextBox id_ventas, MaskedTextBox FechaVenta, TextBox Totalventa,int Representante,MaskedTextBox Fecreorden,int ubicacion, TextBox comentarios)
+        public void insertarVentas(TextBox id_ventas, MaskedTextBox FechaVenta, TextBox Totalventa,int Representante,int ubicacion, TextBox comentarios,int producto)
         {
             try
             {
+
                 ConexionDb objetoConexion = new ConexionDb();
-                string consulta = "insert into venta (id_venta,fecha_venta,Total,id_rep_ventas,Fecha_reorden,id_ubicacion,comentario)" +
+                string consulta = "insert into venta (id_venta,fecha_venta,Total,id_rep_ventas,id_ubicacion,comentario,id_producto)" +
                 "values ('" + id_ventas.Text + "','" + FechaVenta.Text + "','" + Totalventa.Text + "','"
-                + Representante + "','" + Fecreorden.Text + "','" + ubicacion + "','" + comentarios.Text  + "');";
+                + Representante + "','"  + ubicacion + "','" + comentarios.Text  + "','" + producto + "');";
 
                 MySqlCommand MiComando = new MySqlCommand(consulta, objetoConexion.EstablecerConexion());
                 MySqlDataReader registros = MiComando.ExecuteReader();
@@ -81,12 +94,11 @@ namespace Proyecto_MySQL_OOP.ClasesDb
                 }
                 else
                 {
-                    // Otras excepciones de MySQL
                     MessageBox.Show("Error al insertar el registro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
-        public void seleccionarVentas(DataGridView TablaVentas,TextBox id_ventas, MaskedTextBox FechaVenta, TextBox Totalventa, ComboBox Representante, MaskedTextBox Fec_reorden, ComboBox ubicacion, TextBox comentarios)
+        public void seleccionarVentas(DataGridView TablaVentas,TextBox id_ventas, MaskedTextBox FechaVenta, TextBox Totalventa, ComboBox Representante, ComboBox ubicacion, TextBox comentarios,ComboBox producto)
         {
             try
             {
@@ -95,24 +107,55 @@ namespace Proyecto_MySQL_OOP.ClasesDb
                 Totalventa.Text = TablaVentas.CurrentRow.Cells[2].Value.ToString();
                 Representante.Text = TablaVentas.CurrentRow.Cells[3].Value.ToString();
                 comentarios.Text = TablaVentas.CurrentRow.Cells[4].Value.ToString();
-                Fec_reorden.Text = TablaVentas.CurrentRow.Cells[5].Value.ToString();
-                ubicacion.Text = TablaVentas.CurrentRow.Cells[6].Value.ToString();
-               
+                ubicacion.Text = TablaVentas.CurrentRow.Cells[5].Value.ToString();
+                producto.Text = TablaVentas.CurrentRow.Cells[6].Value.ToString();
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No se logro seleccionar" + ex.ToString());
             }
         }
-        public void modificarVentas(TextBox id_ventas, MaskedTextBox FechaVenta, TextBox Totalventa, int Representante, MaskedTextBox Fec_reorden, int ubicacion, TextBox comentarios)
+        public void ConsultarDetalleV(TextBox id_venta, TextBox id_producto, TextBox cantidad, TextBox precio, TextBox Total)
+        {
+            try
+            {
+                ConexionDb objetoConexion = new ConexionDb();
+                TbProductos objetoProducto = new TbProductos();
+                string consulta = "SELECT id_producto, cant, precio, FORMAT(precio * cant, 2) AS total FROM detalle_venta WHERE id_venta = @idVenta";
+                MySqlCommand MiComando = new MySqlCommand(consulta, objetoConexion.EstablecerConexion());
+                MiComando.Parameters.AddWithValue("@idVenta", id_venta.Text);
+                MySqlDataReader registros = MiComando.ExecuteReader();
+
+                if (registros.Read())
+                {
+                    // Mostrar los datos en los TextBox y ComboBox correspondientes
+                    id_producto.Text = registros["id_producto"].ToString();
+                    cantidad.Text = registros["cant"].ToString();
+                    precio.Text = registros["precio"].ToString();
+                    Total.Text = registros["total"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró una venta con el ID proporcionado.", "No encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                objetoConexion.cerrarconexion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al consultar la venta: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void modificarVentas(TextBox id_ventas, MaskedTextBox FechaVenta, TextBox Totalventa, int Representante, int ubicacion, TextBox comentarios, int producto)
         {
             try
             {
                 ConexionDb objetoConexion = new ConexionDb();
                 string consulta = "update venta set fecha_venta='"
-                + FechaVenta.Text + "', total='" + Totalventa.Text +
-                "', id_rep_ventas='" + Representante + "', fecha_reorden='" + Fec_reorden.Text +
-                "', id_ubicacion='" + ubicacion + "', comentario='"+ comentarios.Text + "' where id_venta='" + id_ventas.Text + "';";
+                + FechaVenta.Text   + "', total='" + Totalventa.Text +
+                "', id_rep_ventas='" + Representante  + "', id_ubicacion='" + ubicacion + "', comentario='"+ comentarios.Text + "' where id_venta='" + id_ventas.Text + "', id_producto='"+producto+"';";
 
                 MySqlCommand MiComando = new MySqlCommand(consulta, objetoConexion.EstablecerConexion());
                 MySqlDataReader registros = MiComando.ExecuteReader();

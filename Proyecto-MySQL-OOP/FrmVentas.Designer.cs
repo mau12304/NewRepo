@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.mskFechaReorden = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.mskFechaVenta = new System.Windows.Forms.MaskedTextBox();
             this.txtcomentarios = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.dgtVentas = new System.Windows.Forms.DataGridView();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblNombreTienda = new System.Windows.Forms.Label();
-            this.btnArea = new System.Windows.Forms.Button();
+            this.btndetalle_venta = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtVentas)).BeginInit();
             this.panelLogo.SuspendLayout();
@@ -60,7 +60,9 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.SeaShell;
-            this.groupBox4.Controls.Add(this.mskFechaReorden);
+            this.groupBox4.Controls.Add(this.btndetalle_venta);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.cmbProducto);
             this.groupBox4.Controls.Add(this.mskFechaVenta);
             this.groupBox4.Controls.Add(this.txtcomentarios);
             this.groupBox4.Controls.Add(this.label7);
@@ -72,7 +74,6 @@
             this.groupBox4.Controls.Add(this.btnInsertar);
             this.groupBox4.Controls.Add(this.btnModificar);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label2);
@@ -85,14 +86,24 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos de ventas";
             // 
-            // mskFechaReorden
+            // label5
             // 
-            this.mskFechaReorden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskFechaReorden.Location = new System.Drawing.Point(240, 164);
-            this.mskFechaReorden.Mask = "0000/00/00";
-            this.mskFechaReorden.Name = "mskFechaReorden";
-            this.mskFechaReorden.Size = new System.Drawing.Size(94, 24);
-            this.mskFechaReorden.TabIndex = 21;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(9, 164);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 18);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Porducto";
+            // 
+            // cmbProducto
+            // 
+            this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProducto.FormattingEnabled = true;
+            this.cmbProducto.Location = new System.Drawing.Point(141, 164);
+            this.cmbProducto.Name = "cmbProducto";
+            this.cmbProducto.Size = new System.Drawing.Size(177, 26);
+            this.cmbProducto.TabIndex = 21;
             // 
             // mskFechaVenta
             // 
@@ -111,13 +122,12 @@
             this.txtcomentarios.Name = "txtcomentarios";
             this.txtcomentarios.Size = new System.Drawing.Size(314, 40);
             this.txtcomentarios.TabIndex = 19;
-            this.txtcomentarios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcomentarios_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(7, 208);
+            this.label7.Location = new System.Drawing.Point(9, 208);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 18);
             this.label7.TabIndex = 18;
@@ -129,7 +139,7 @@
             this.cmbUbicacion.FormattingEnabled = true;
             this.cmbUbicacion.Location = new System.Drawing.Point(399, 131);
             this.cmbUbicacion.Name = "cmbUbicacion";
-            this.cmbUbicacion.Size = new System.Drawing.Size(138, 26);
+            this.cmbUbicacion.Size = new System.Drawing.Size(129, 26);
             this.cmbUbicacion.TabIndex = 17;
             // 
             // cmbRepresentante
@@ -205,16 +215,6 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Ubicación";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 164);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 18);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Fecha de reorden de la venta";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -229,7 +229,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(201, 42);
+            this.label3.Location = new System.Drawing.Point(218, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 18);
             this.label3.TabIndex = 2;
@@ -259,9 +259,9 @@
             // 
             this.btnVolverMenu.BackColor = System.Drawing.Color.Gainsboro;
             this.btnVolverMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolverMenu.Location = new System.Drawing.Point(552, 393);
+            this.btnVolverMenu.Location = new System.Drawing.Point(552, 396);
             this.btnVolverMenu.Name = "btnVolverMenu";
-            this.btnVolverMenu.Size = new System.Drawing.Size(156, 48);
+            this.btnVolverMenu.Size = new System.Drawing.Size(136, 37);
             this.btnVolverMenu.TabIndex = 9;
             this.btnVolverMenu.Text = "Menú";
             this.btnVolverMenu.UseVisualStyleBackColor = false;
@@ -271,9 +271,9 @@
             // 
             this.btnSalirVentas.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSalirVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalirVentas.Location = new System.Drawing.Point(714, 393);
+            this.btnSalirVentas.Location = new System.Drawing.Point(694, 396);
             this.btnSalirVentas.Name = "btnSalirVentas";
-            this.btnSalirVentas.Size = new System.Drawing.Size(156, 48);
+            this.btnSalirVentas.Size = new System.Drawing.Size(134, 37);
             this.btnSalirVentas.TabIndex = 10;
             this.btnSalirVentas.Text = "Salir";
             this.btnSalirVentas.UseVisualStyleBackColor = false;
@@ -286,8 +286,8 @@
             this.dgtVentas.Name = "dgtVentas";
             this.dgtVentas.RowHeadersWidth = 51;
             this.dgtVentas.RowTemplate.Height = 24;
-            this.dgtVentas.Size = new System.Drawing.Size(624, 309);
-            this.dgtVentas.TabIndex = 11;
+            this.dgtVentas.Size = new System.Drawing.Size(610, 309);
+            this.dgtVentas.TabIndex = 1;
             this.dgtVentas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgtVentas_CellDoubleClick);
             // 
             // panelLogo
@@ -298,7 +298,7 @@
             this.panelLogo.Controls.Add(this.lblNombreTienda);
             this.panelLogo.Location = new System.Drawing.Point(3, 1);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(1186, 71);
+            this.panelLogo.Size = new System.Drawing.Size(1160, 71);
             this.panelLogo.TabIndex = 12;
             // 
             // lblNombreTienda
@@ -307,30 +307,30 @@
             this.lblNombreTienda.AutoSize = true;
             this.lblNombreTienda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreTienda.ForeColor = System.Drawing.Color.White;
-            this.lblNombreTienda.Location = new System.Drawing.Point(481, 20);
+            this.lblNombreTienda.Location = new System.Drawing.Point(468, 20);
             this.lblNombreTienda.Name = "lblNombreTienda";
             this.lblNombreTienda.Size = new System.Drawing.Size(243, 32);
             this.lblNombreTienda.TabIndex = 0;
             this.lblNombreTienda.Text = "FACTORY STORE";
             // 
-            // btnArea
+            // btndetalle_venta
             // 
-            this.btnArea.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArea.Location = new System.Drawing.Point(1006, 393);
-            this.btnArea.Name = "btnArea";
-            this.btnArea.Size = new System.Drawing.Size(156, 48);
-            this.btnArea.TabIndex = 13;
-            this.btnArea.Text = "Areas";
-            this.btnArea.UseVisualStyleBackColor = false;
-            this.btnArea.Click += new System.EventHandler(this.btnArea_Click);
+            this.btndetalle_venta.BackColor = System.Drawing.Color.Gainsboro;
+            this.btndetalle_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndetalle_venta.Location = new System.Drawing.Point(132, 254);
+            this.btndetalle_venta.Name = "btndetalle_venta";
+            this.btndetalle_venta.Size = new System.Drawing.Size(212, 36);
+            this.btndetalle_venta.TabIndex = 27;
+            this.btndetalle_venta.Text = "Detalle de Ventas";
+            this.btndetalle_venta.UseVisualStyleBackColor = false;
+            this.btndetalle_venta.Click += new System.EventHandler(this.btndetalle_venta_Click);
             // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 442);
-            this.Controls.Add(this.btnArea);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(1166, 441);
             this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.dgtVentas);
             this.Controls.Add(this.btnSalirVentas);
@@ -338,6 +338,7 @@
             this.Controls.Add(this.groupBox4);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmVentas";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " VENTA";
             this.Load += new System.EventHandler(this.FrmVentas_Load);
@@ -354,7 +355,6 @@
 
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -373,8 +373,9 @@
         private System.Windows.Forms.Label lblNombreTienda;
         private System.Windows.Forms.TextBox txtcomentarios;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox mskFechaReorden;
         private System.Windows.Forms.MaskedTextBox mskFechaVenta;
-        private System.Windows.Forms.Button btnArea;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbProducto;
+        private System.Windows.Forms.Button btndetalle_venta;
     }
 }

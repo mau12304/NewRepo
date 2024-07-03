@@ -22,9 +22,9 @@ namespace Proyecto_MySQL_OOP
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            FrmVentas objregresar = new FrmVentas();
+            Frm1 obj = new Frm1();
             this.Hide();
-            objregresar.Show();
+            obj.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

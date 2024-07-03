@@ -119,8 +119,7 @@
             this.txtComentarios.Name = "txtComentarios";
             this.txtComentarios.Size = new System.Drawing.Size(395, 48);
             this.txtComentarios.TabIndex = 13;
-            this.txtComentarios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComentarios_KeyPress);
-            // 
+
             // txtCanMin
             // 
             this.txtCanMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

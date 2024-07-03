@@ -110,7 +110,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(208, 250);
+            this.btnEliminar.Location = new System.Drawing.Point(208, 237);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(92, 30);
             this.btnEliminar.TabIndex = 22;
@@ -122,7 +122,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(6, 250);
+            this.btnModificar.Location = new System.Drawing.Point(6, 237);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(92, 30);
             this.btnModificar.TabIndex = 21;
@@ -134,7 +134,7 @@
             // 
             this.btnInsertar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsertar.Location = new System.Drawing.Point(104, 250);
+            this.btnInsertar.Location = new System.Drawing.Point(104, 237);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(92, 30);
             this.btnInsertar.TabIndex = 20;
@@ -191,9 +191,9 @@
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(464, 328);
+            this.btnRegresar.Location = new System.Drawing.Point(470, 321);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(102, 30);
+            this.btnRegresar.Size = new System.Drawing.Size(102, 34);
             this.btnRegresar.TabIndex = 26;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
@@ -203,9 +203,9 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(588, 328);
+            this.btnSalir.Location = new System.Drawing.Point(596, 321);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(92, 30);
+            this.btnSalir.Size = new System.Drawing.Size(92, 34);
             this.btnSalir.TabIndex = 27;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;

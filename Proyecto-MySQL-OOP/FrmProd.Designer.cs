@@ -56,9 +56,6 @@
             this.btnSalirVentas = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblNombreTienda = new System.Windows.Forms.Label();
-            this.btnModelo = new System.Windows.Forms.Button();
-            this.btnGenero = new System.Windows.Forms.Button();
-            this.btnTipo = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtProductos)).BeginInit();
             this.panelLogo.SuspendLayout();
@@ -103,7 +100,7 @@
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.Location = new System.Drawing.Point(377, 16);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(109, 30);
+            this.btnLimpiar.Size = new System.Drawing.Size(109, 36);
             this.btnLimpiar.TabIndex = 24;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -167,6 +164,8 @@
             // 
             this.cmbGnero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGnero.FormattingEnabled = true;
+            this.cmbGnero.Items.AddRange(new object[] {
+            ""});
             this.cmbGnero.Location = new System.Drawing.Point(346, 134);
             this.cmbGnero.Name = "cmbGnero";
             this.cmbGnero.Size = new System.Drawing.Size(148, 26);
@@ -180,7 +179,6 @@
             this.txtComentarios.Name = "txtComentarios";
             this.txtComentarios.Size = new System.Drawing.Size(368, 60);
             this.txtComentarios.TabIndex = 17;
-            this.txtComentarios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtComentarios_KeyPress);
             // 
             // txtPrecioPro
             // 
@@ -360,7 +358,7 @@
             this.panelLogo.Controls.Add(this.lblNombreTienda);
             this.panelLogo.Location = new System.Drawing.Point(1, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(1194, 71);
+            this.panelLogo.Size = new System.Drawing.Size(1175, 71);
             this.panelLogo.TabIndex = 12;
             // 
             // lblNombreTienda
@@ -369,57 +367,18 @@
             this.lblNombreTienda.AutoSize = true;
             this.lblNombreTienda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreTienda.ForeColor = System.Drawing.Color.White;
-            this.lblNombreTienda.Location = new System.Drawing.Point(485, 20);
+            this.lblNombreTienda.Location = new System.Drawing.Point(475, 20);
             this.lblNombreTienda.Name = "lblNombreTienda";
             this.lblNombreTienda.Size = new System.Drawing.Size(243, 32);
             this.lblNombreTienda.TabIndex = 0;
             this.lblNombreTienda.Text = "FACTORY STORE";
-            // 
-            // btnModelo
-            // 
-            this.btnModelo.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModelo.Location = new System.Drawing.Point(1064, 505);
-            this.btnModelo.Name = "btnModelo";
-            this.btnModelo.Size = new System.Drawing.Size(109, 30);
-            this.btnModelo.TabIndex = 15;
-            this.btnModelo.Text = "Modelo";
-            this.btnModelo.UseVisualStyleBackColor = false;
-            this.btnModelo.Click += new System.EventHandler(this.btnModelo_Click);
-            // 
-            // btnGenero
-            // 
-            this.btnGenero.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenero.Location = new System.Drawing.Point(920, 505);
-            this.btnGenero.Name = "btnGenero";
-            this.btnGenero.Size = new System.Drawing.Size(109, 30);
-            this.btnGenero.TabIndex = 16;
-            this.btnGenero.Text = "Genero";
-            this.btnGenero.UseVisualStyleBackColor = false;
-            this.btnGenero.Click += new System.EventHandler(this.btnGenero_Click);
-            // 
-            // btnTipo
-            // 
-            this.btnTipo.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTipo.Location = new System.Drawing.Point(947, 461);
-            this.btnTipo.Name = "btnTipo";
-            this.btnTipo.Size = new System.Drawing.Size(183, 34);
-            this.btnTipo.TabIndex = 17;
-            this.btnTipo.Text = "Tipo del Producto";
-            this.btnTipo.UseVisualStyleBackColor = false;
-            this.btnTipo.Click += new System.EventHandler(this.btnTipo_Click);
             // 
             // FrmProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1196, 547);
-            this.Controls.Add(this.btnTipo);
-            this.Controls.Add(this.btnGenero);
-            this.Controls.Add(this.btnModelo);
+            this.ClientSize = new System.Drawing.Size(1177, 528);
             this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.btnSalirVentas);
             this.Controls.Add(this.btnVolverMenu);
@@ -467,9 +426,6 @@
         private System.Windows.Forms.Button btnSalirVentas;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label lblNombreTienda;
-        private System.Windows.Forms.Button btnModelo;
-        private System.Windows.Forms.Button btnGenero;
-        private System.Windows.Forms.Button btnTipo;
         private System.Windows.Forms.Button btnLimpiar;
     }
 }

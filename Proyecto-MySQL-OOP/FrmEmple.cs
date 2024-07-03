@@ -61,8 +61,7 @@ namespace Proyecto_MySQL_OOP
             }
             objetoEmpleado.insertarEmpleados(txtid, txtPaterno,txtMaterno,txtNombre,mstFecha, Convert.ToInt32(cmbPuesto.SelectedValue));
             objetoEmpleado.VerEmpleados(dgbEmpleado);
-
-
+            Limpiar();
         }
 
         private void FrmEmple_Load(object sender, EventArgs e)
@@ -81,6 +80,7 @@ namespace Proyecto_MySQL_OOP
             ClasesDb.TbEmpleado objetoEmpleado = new ClasesDb.TbEmpleado();
             objetoEmpleado.modificarEmpleados(txtid, txtPaterno, txtMaterno, txtNombre, mstFecha, Convert.ToInt32(cmbPuesto.SelectedValue));
             objetoEmpleado.VerEmpleados(dgbEmpleado);
+            Limpiar();        
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -88,13 +88,7 @@ namespace Proyecto_MySQL_OOP
             ClasesDb.TbEmpleado objetoEmpleado = new ClasesDb.TbEmpleado();
             objetoEmpleado.eliminarEmpleados(txtid);
             objetoEmpleado.VerEmpleados(dgbEmpleado);
-        }
-
-        private void btnPuesto_Click(object sender, EventArgs e)
-        {
-            FrmPuesto obj = new FrmPuesto();
-            this.Hide();
-            obj.Show();
+            Limpiar();
         }
 
         private void txtid_KeyPress(object sender, KeyPressEventArgs e)
@@ -160,6 +154,16 @@ namespace Proyecto_MySQL_OOP
             {
                 e.Handled = true; // El resto de teclas pulsadas se desactivan
             }
+        }
+        
+        private void Limpiar()
+        {
+            txtid.Clear();
+            txtNombre.Clear();
+            txtPaterno.Clear();
+            txtMaterno.Clear(); 
+            mstFecha.Text = "";
+            cmbPuesto.Text = "";
         }
     }
 }

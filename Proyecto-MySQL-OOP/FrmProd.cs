@@ -77,11 +77,12 @@ namespace Proyecto_MySQL_OOP
                     File.WriteAllText(rutaArchivo, datos);
                 }
             }
-            objetoProducto.insertarProductos(int.Parse(txtid.Text),txtNombre,txtColor,txtTalla, Convert.ToInt32(cmbGnero.SelectedValue), Convert.ToInt32(cmbTipo.SelectedValue), Convert.ToInt32(cmbModelo.SelectedValue),txtPrecioPro,txtComentarios);
+            objetoProducto.insertarProductos(txtid,txtNombre,txtColor,txtTalla, Convert.ToInt32(cmbGnero.SelectedValue), Convert.ToInt32(cmbTipo.SelectedValue), Convert.ToInt32(cmbModelo.SelectedValue),txtPrecioPro,txtComentarios);
             objetoProducto.VerProductos(dgtProductos);
+            Limpiar();
         }
 
-        private void dgtProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        public void dgtProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ClasesDb.TbProductos objetoProducto = new ClasesDb.TbProductos();
             objetoProducto.seleccionarProductos(dgtProductos,txtid, txtNombre, txtColor, txtTalla, cmbGnero, cmbTipo, cmbModelo, txtPrecioPro, txtComentarios);
@@ -90,8 +91,9 @@ namespace Proyecto_MySQL_OOP
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ClasesDb.TbProductos objetoProducto = new ClasesDb.TbProductos();
-            objetoProducto.modificarProductos(int.Parse(txtid.Text), txtNombre, txtColor, txtTalla, Convert.ToInt32(cmbGnero.SelectedValue), Convert.ToInt32(cmbTipo.SelectedValue), Convert.ToInt32(cmbModelo.SelectedValue), txtPrecioPro, txtComentarios);
+            objetoProducto.modificarProductos(txtid, txtNombre, txtColor, txtTalla, Convert.ToInt32(cmbGnero.SelectedValue), Convert.ToInt32(cmbTipo.SelectedValue), Convert.ToInt32(cmbModelo.SelectedValue), txtPrecioPro, txtComentarios);
             objetoProducto.VerProductos(dgtProductos);
+            Limpiar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -99,27 +101,7 @@ namespace Proyecto_MySQL_OOP
             ClasesDb.TbProductos objetoProducto = new ClasesDb.TbProductos();
             objetoProducto.eliminarProductos(txtid);
             objetoProducto.VerProductos(dgtProductos);
-        }
-
-        private void btnTipo_Click(object sender, EventArgs e)
-        {
-            FrmTipo obj = new FrmTipo();
-            this.Hide();
-            obj.Show();
-        }
-
-        private void btnGenero_Click(object sender, EventArgs e)
-        {
-            FrmGenero obj = new FrmGenero();
-            this.Hide();
-            obj.Show();
-        }
-
-        private void btnModelo_Click(object sender, EventArgs e)
-        {
-            FrmModelo obj = new FrmModelo();
-            this.Hide();
-            obj.Show();
+            Limpiar();
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -139,22 +121,6 @@ namespace Proyecto_MySQL_OOP
         }
 
         private void txtColor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar)) // Permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true; // El resto de teclas pulsadas se desactivan
-            }
-        }
-
-        private void txtComentarios_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
             {
@@ -215,7 +181,19 @@ namespace Proyecto_MySQL_OOP
             cmbTipo.Text = "";
             cmbModelo.Text = "";
             txtComentarios.Clear();
-
         }
+        private void Limpiar()
+        {
+            txtid.Clear();
+            txtNombre.Clear();
+            txtPrecioPro.Clear();
+            txtTalla.Clear();
+            txtColor.Clear();
+            cmbGnero.Text = "";
+            cmbTipo.Text = "";
+            cmbModelo.Text = "";
+            txtComentarios.Clear();
+        }
+
     }
 }
